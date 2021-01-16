@@ -7,6 +7,7 @@
 4. Eslint : v7.18.0
 5. Body-Parser : v1.19.0
 6. Express-Handlebars : v5.2.0
+7. Mongoose : v5.11.12
 
 ## 安裝與執行步驟 (Installation and Execution)
 1. 將專案複製到本機 (兩種方法)
