@@ -1,6 +1,7 @@
 // 取模組
 const express = require('express')
 const mongoose = require('mongoose')
+const exphbs = require('express-handlebars')
 const router = require('./routes/index')
 const app = express()
 
@@ -20,7 +21,12 @@ db.once('open', () => {
   console.log('open')
 })
 
+// 渲染引擎
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
 // 設定路由
+app.use(express.static('public'))
 app.use(router)
 
 // 伺服器監聽
