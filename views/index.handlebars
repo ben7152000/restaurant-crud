@@ -11,4 +11,7 @@
 <div>{{ this.rating }}</div>
 <div>{{ this.description }}</div>
 <a href="./items/{{ this._id }}">detail</a>
+<form action="/items/{{ this._id }}/deleteItem" method="post">
+  <button type="submit">delete</button>
+</form>
 {{/each}}

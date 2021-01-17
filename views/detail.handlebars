@@ -9,3 +9,6 @@
 <div>{{ item.description }}</div>
 <a href="/items/{{ item._id }}/edit">edit</a>
 <a href="/">back</a>
+<form action="/items/{{ item._id }}/deleteItem" method="post">
+  <button type="submit">delete</button>
+</form>
