@@ -5,7 +5,7 @@ const Item = require('../../models/item')
 router.get('/', (req, res) => {
   Item.find()
     .lean()
-    .then(items => res.render('index', { items }))
+    .then(item => res.render('index', { item }))
     .catch(error => console.error(error))
 })
 
