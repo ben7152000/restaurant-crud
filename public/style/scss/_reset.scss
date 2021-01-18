@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  font-family: "Noto Sans TC", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul, ol, li {
+  list-style: none;
+}

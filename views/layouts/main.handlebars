@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dining Room List</title>
-  <link rel="stylesheet" href="/style/bootstrap.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style/main.css">
+
+  <!-- Font Awesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'/>
+
 </head>
+
 <body>
 
+  <!-- header -->
+  <input type="checkbox" id="menu-control">
+
+  <div class="header">
+    <div class="logo">D. R. List</div>
+    <label for="menu-control" class="menu-btn">
+      <span>menu</span>
+    </label>
+    <div class="nav">
+      <a href="javascript:;">清單首頁</a>
+      <a href="javascript:;">我的最愛</a>
+      <a href="javascript:;">顧客服務</a>
+      <a href="javascript:;">會員登入</a>
+    </div>
+  </div>
+  <!-- header end -->
+
   {{{ body }}}
-   
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/popper.min.js"></script>
+
+  <!-- copyright -->
+  <div class="copyright">
+    <span>copyright &copy; Ben Chou</span>
+  </div>
+  <!-- copyright end -->
 
 </body>
+
 </html>

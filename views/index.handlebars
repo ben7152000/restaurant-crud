@@ -1,17 +1,57 @@
-<a href="./items/newItem">Create</a>
+<!--  banner  -->
+<div class="banner">
+  <div class="container">
+    <div class="text">
+      <h1 class="title">Hi! I'm Ben Chou</h1>
+      <p>Welcome to Website</p>
+      <p>Dining Room List</p>
+    </div>
+  </div>
+</div>
+<!--  banner end  -->
 
-{{#each item}}
-<div>{{ this.name }}</div>
-<div>{{ this.name_en }}</div>
-<div>{{ this.category }}</div>
-<div>{{ this.image }}</div>
-<div>{{ this.location }}</div>
-<div>{{ this.phone }}</div>
-<div>{{ this.google._map }}</div>
-<div>{{ this.rating }}</div>
-<div>{{ this.description }}</div>
-<a href="./items/{{ this._id }}">detail</a>
-<form action="/items/{{ this._id }}/deleteItem" method="post">
-  <button type="submit">delete</button>
-</form>
-{{/each}}
+<!--  create  -->
+<div class="create">
+  <div class="container">
+    <a href="./items/newItem">新增餐廳</a>
+  </div>
+</div>
+<!--  create end  -->
+
+<!-- restaurant list -->
+<div class="list">
+  <div class="container">
+    <div class="item-group">
+
+      {{#each item}}
+      <div class="item">
+        <div class="pic">
+          <a href="/items/{{ this._id }}">
+            <img src="{{ this.image }}" alt="{{ this.name }}"></a>
+        </div>
+        <div class="text">
+          <h6 class="title">{{ this.name }}</h6>
+          <div class="subtitle">
+            <i class="fas fa-utensils"></i>
+            {{ this.category }}
+          </div>
+          <div class="heart">
+            {{ this.rating }}
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="map">
+            <a href="{{ this.google_map }}" target="_blank">
+              <i class="fas fa-location-arrow map"></i>
+            </a>
+          </div>
+          <form action="/items/{{ this._id }}/deleteItem" method="post">
+            <button type="submit"><i class="fas fa-trash"></i></button>
+          </form>
+        </div>
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+</div>
+<!-- restaurant list end -->
