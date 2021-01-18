@@ -1,0 +1,139 @@
+@import "color";
+
+.detail {
+  padding-top: 100px;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    opacity: .8;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    color: $primary-color;
+    background-color: $dark-color;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    margin: 0 auto 50px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+
+    .pic {
+      max-width: 600px;
+      margin: 0 20px;
+
+      img {
+        width: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    .text {
+      width: 100%;
+      max-width: 600px;
+      background-color: $light-color;
+      margin: 30px;
+      padding: 20px 30px;
+      border-radius: 10px;
+
+      p {
+        font-size: .9rem;
+        font-weight: 300;
+        color: $dark-color;
+        line-height: 1.6;
+        letter-spacing: .5px;
+
+        span {
+          font-size: .9rem;
+          font-weight: 500;
+          color: #555;
+          line-height: 1.6;
+          text-align: center;
+  
+          i {
+              padding-right: 5px;
+            }
+          }
+
+          .map {
+            margin-left: 5px;
+            color: $dark-color;
+            transition: .5s;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+
+      .description {
+        margin-top: 10px;
+        padding: 5px;
+      }
+    
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: 50px;
+  
+    a {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: $dark-color;
+      background-color: $primary-color;
+      width: 56px;
+      height: 56px;
+      line-height: 56px;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      transition: .5s;
+      margin: 0 15px;
+  
+      &:hover {
+        color: $text-color;
+        background-color: $dark-color;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .detail {
+    .title {
+      font-size: 3rem;
+    }
+
+    .container {
+      .text {
+        p {
+          font-size: 1.2rem;
+          line-height: 1.8;
+
+          span {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
