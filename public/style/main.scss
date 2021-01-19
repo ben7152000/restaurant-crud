@@ -3,9 +3,10 @@
 @import "./scss/copyright";
 @import "./scss/banner";
 @import "./scss/create";
-@import "./scss/_item.scss";
+@import "./scss/item";
 @import "./scss/detail";
-@import "./scss/_new.scss";
+@import "./scss/new";
+@import "./scss/edit";
 
 body {
   background-color: #000;

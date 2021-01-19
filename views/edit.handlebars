@@ -1,13 +1,50 @@
-<form action="/items/{{ item._id }}/edit" method="post">
-  <input type="text" placeholder="name" name="name" value="{{ item.name }}">
-  <input type="text" placeholder="english name" name="name_en" value="{{ item.name_en }}">
-  <input type="text" placeholder="category" name="category" value="{{ item.category }}">
-  <input type="text" placeholder="http://" name="image" value="{{ item.image }}">
-  <input type="text" placeholder="address" name="location" value="{{ item.location }}">
-  <input type="text" placeholder="phone" name="phone" value="{{ item.phone }}">
-  <input type="text" placeholder="google map api" name="google_map" value="{{ item.google_map }}">
-  <input type="text" placeholder="4.0" name="rating" value="{{ item.rating }}">
-  <input type="text" name="description" value="{{ item.description }}">
-  <button type="submit">Save</button>
-  <a href="/items/{{ item._id }}">back</a>
-</form>
+<!-- edit item  -->
+<div class="new-item">
+  <div class="container">
+    <div class="item">
+      <div class="title">編輯餐廳</div>
+      <form action="/items/{{ item._id }}/edit" method="post">
+        <label>名稱</label>
+        <br>
+        <input type="text" placeholder="名稱" name="name" value="{{ item.name }}">
+        <br>
+        <label>英文名稱</label>
+        <br>
+        <input type="text" placeholder="英文名稱" name="name_en" value="{{ item.name_en }}">
+        <br>
+        <label>種類</label>
+        <br>
+        <input type="text" placeholder="種類" name="category" value="{{ item.category }}">
+        <br>
+        <label>評價</label>
+        <br>
+        <input type="text" placeholder="4.0" name="rating" value="{{ item.rating }}">
+        <br>
+        <label>電話</label>
+        <br>
+        <input type="text" placeholder="電話" name="phone" value="{{ item.phone }}">
+        <br>
+        <label>圖片</label>
+        <br>
+        <input type="text" placeholder="http://..." name="image"  value="{{ item.image }}">
+        <br>
+        <label>地址</label>
+        <br>
+        <input type="text" placeholder="地址" name="location" value="{{ item.location }}">
+        <br>
+        <label>Google 網址</label>
+        <br>
+        <input type="text" placeholder="Google 網址" name="google_map" value="{{ item.google_map }}">
+        <br>
+        <label>描述</label>
+        <br>
+        <textarea name="description" cols="30" rows="10" type="text">{{ item.description }}</textarea>
+        <div class="btn">
+          <button type="submit">更新</button>
+        </div>
+      </form>
+      <a href="/items/{{ item._id }}">取消</a>
+    </div>
+  </div>
+</div>
+<!--  edit item end  -->
