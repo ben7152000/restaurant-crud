@@ -1,5 +1,5 @@
 <!-- edit item  -->
-<div class="new-item">
+<div class="edit-item">
   <div class="container">
     <div class="item">
       <div class="title">編輯餐廳</div>
@@ -41,9 +41,9 @@
         <textarea name="description" cols="30" rows="10" type="text">{{ item.description }}</textarea>
         <div class="btn">
           <button type="submit">更新</button>
+          <button type="submit" formaction="/items/{{ item._id }}" formmethod="get">取消</button>
         </div>
       </form>
-      <a href="/items/{{ item._id }}">取消</a>
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@
   &:checked ~ .header .menu-btn:before {
     transform: rotate(45deg);
     box-shadow: none;
-    transition: 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
   }
 
   &:checked ~ .header .menu-btn:after {

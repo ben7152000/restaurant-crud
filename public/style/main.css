@@ -40,8 +40,10 @@ ul, ol, li {
           transform: rotate(45deg);
   -webkit-box-shadow: none;
           box-shadow: none;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 #menu-control:checked ~ .header .menu-btn:after {
@@ -370,8 +372,10 @@ ul, ol, li {
   vertical-align: middle;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
 }
 
 .list .container .item-group .item .pic img:hover {
@@ -431,8 +435,8 @@ ul, ol, li {
 
 .list .container .item-group .item .text .map a {
   color: #333;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: color .5s;
+  transition: color .5s;
 }
 
 .list .container .item-group .item .text .map a:hover {
@@ -450,11 +454,16 @@ ul, ol, li {
   background-color: #ccc;
 }
 
+.list .container .item-group .item .text form button:focus {
+  outline: none;
+  border: none;
+}
+
 .list .container .item-group .item .text form button i {
   font-size: 1rem;
   color: #333;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: color .5s;
+  transition: color .5s;
   cursor: pointer;
 }
 
@@ -541,8 +550,8 @@ ul, ol, li {
 .detail .container .text p .map {
   margin-left: 5px;
   color: #333;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: color .5s;
+  transition: color .5s;
 }
 
 .detail .container .text p .map:hover {
@@ -591,12 +600,35 @@ ul, ol, li {
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
   margin: 0 15px;
 }
 
 .icons .icon a:hover {
+  color: #bebebe;
+  background-color: #333;
+}
+
+.icons .icon button {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #333;
+  background-color: #c5aa78;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: color .5s, background-color .5s;
+  transition: color .5s, background-color .5s;
+  margin: 0 15px;
+  outline: none;
+  border: none;
+}
+
+.icons .icon button:hover {
   color: #bebebe;
   background-color: #333;
 }
@@ -689,8 +721,8 @@ ul, ol, li {
   border-radius: 30px;
   letter-spacing: .5px;
   background-color: #bebebe;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
 }
 
 .new-item .container .item form input:hover {
@@ -715,8 +747,8 @@ ul, ol, li {
   font-weight: 500;
   letter-spacing: .5px;
   background-color: #bebebe;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
 }
 
 .new-item .container .item form textarea:hover {
@@ -739,12 +771,14 @@ ul, ol, li {
   background-color: #000;
   color: #fff;
   letter-spacing: 1.5px;
-  margin: 5px 0 10px;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: color .5s, -webkit-transform .5s;
+  transition: color .5s, -webkit-transform .5s;
+  transition: color .5s, transform .5s;
+  transition: color .5s, transform .5s, -webkit-transform .5s;
   -webkit-transform: scale(1);
           transform: scale(1);
   cursor: pointer;
+  margin: 5px 10px 15px;
 }
 
 .new-item .container .item form .btn button:hover {
@@ -760,7 +794,7 @@ ul, ol, li {
 
 @media screen and (min-width: 768px) {
   .new-item .container .item .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .new-item .container .item form label {
     font-size: 1.4rem;
@@ -781,11 +815,11 @@ ul, ol, li {
   }
 }
 
-.new-item {
+.edit-item {
   padding-top: 150px;
 }
 
-.new-item .container {
+.edit-item .container {
   width: 100%;
   max-width: 1200px;
   display: -webkit-box;
@@ -800,7 +834,7 @@ ul, ol, li {
   margin: 0 auto;
 }
 
-.new-item .container .item {
+.edit-item .container .item {
   width: 100%;
   max-width: 800px;
   margin: 15px;
@@ -822,7 +856,7 @@ ul, ol, li {
   padding: 15px;
 }
 
-.new-item .container .item .title {
+.edit-item .container .item .title {
   font-size: 1.8rem;
   font-size: 700;
   color: #c5aa78;
@@ -831,20 +865,20 @@ ul, ol, li {
   border-bottom: 2px solid #c5aa78;
 }
 
-.new-item .container .item form {
+.edit-item .container .item form {
   width: 100%;
   margin: auto;
   text-align: center;
 }
 
-.new-item .container .item form label {
+.edit-item .container .item form label {
   font-size: 1.2rem;
   font-weight: 500;
   color: #333;
   margin-bottom: 10px;
 }
 
-.new-item .container .item form input {
+.edit-item .container .item form input {
   width: 100%;
   height: 30px;
   margin-bottom: 25px;
@@ -855,22 +889,15 @@ ul, ol, li {
   border: none;
   border-radius: 30px;
   letter-spacing: .5px;
-  background-color: #bebebe;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-.new-item .container .item form input:hover {
   background-color: #fff;
 }
 
-.new-item .container .item form input:focus {
-  background-color: #fff;
+.edit-item .container .item form input:focus {
   border: none;
   outline: none;
 }
 
-.new-item .container .item form textarea {
+.edit-item .container .item form textarea {
   width: 100%;
   height: 300px;
   border-radius: 10px;
@@ -881,22 +908,18 @@ ul, ol, li {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: .5px;
-  background-color: #bebebe;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-.new-item .container .item form textarea:hover {
   background-color: #fff;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
 }
 
-.new-item .container .item form textarea:focus {
+.edit-item .container .item form textarea:focus {
   background-color: #fff;
   border: none;
   outline: none;
 }
 
-.new-item .container .item form .btn button {
+.edit-item .container .item form .btn button {
   width: 100px;
   height: 50px;
   border: none;
@@ -906,40 +929,42 @@ ul, ol, li {
   background-color: #000;
   color: #fff;
   letter-spacing: 1.5px;
-  margin: 5px 0 10px;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: color .5s, -webkit-transform .5s;
+  transition: color .5s, -webkit-transform .5s;
+  transition: color .5s, transform .5s;
+  transition: color .5s, transform .5s, -webkit-transform .5s;
   -webkit-transform: scale(1);
           transform: scale(1);
   cursor: pointer;
+  margin: 5px 10px 15px;
 }
 
-.new-item .container .item form .btn button:hover {
+.edit-item .container .item form .btn button:hover {
   color: #c5aa78;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.new-item .container .item form .btn button:active, .new-item .container .item form .btn button:focus {
+.edit-item .container .item form .btn button:active, .edit-item .container .item form .btn button:focus {
   border: none;
   outline: none;
 }
 
 @media screen and (min-width: 768px) {
-  .new-item .container .item .title {
-    font-size: 2rem;
+  .edit-item .container .item .title {
+    font-size: 2.5rem;
   }
-  .new-item .container .item form label {
+  .edit-item .container .item form label {
     font-size: 1.4rem;
   }
-  .new-item .container .item form input {
+  .edit-item .container .item form input {
     font-size: 1rem;
     height: 40px;
   }
-  .new-item .container .item form textarea {
+  .edit-item .container .item form textarea {
     font-size: 1rem;
   }
-  .new-item .container .item form .btn button {
+  .edit-item .container .item form .btn button {
     font-size: 1.4rem;
     margin-top: 10px;
     margin-bottom: 20px;
