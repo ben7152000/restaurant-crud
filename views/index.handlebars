@@ -18,6 +18,20 @@
 </div>
 <!--  create end  -->
 
+<!--  search  -->
+<div class="search">
+    <div class="container">
+      <form action="/search">
+        <h4>尋找餐廳：</h4>
+        <div class="input">
+          <input type="text" name="keyword" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="{{ keyword }}" aria-describedby="search-button">
+          <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+<!--  search end  -->
+
 <!-- item list -->
 <div class="list">
   <div class="container">
