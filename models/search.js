@@ -1,17 +1,17 @@
 const express = require('express')
 const router = express.Router()
-const restaurant = require('./restaurant')
+const Restaurant = require('./restaurant')
 
 router.get('/', (req, res) => {
   const keyword = req.query.keyword
-  return restaurant.find({
+  return Restaurant.find({
     $or: [
       { name: { $regex: `${keyword}`, $options: '$i' } },
       { category: { $regex: `${keyword}`, $options: '$i' } }
     ]
   })
     .lean()
-    .then(rest => res.render('index', { rest, keyword }))
+    .then(restaurant => res.render('../views/restaurant/index', { restaurant, keyword }))
 })
 
 module.exports = router

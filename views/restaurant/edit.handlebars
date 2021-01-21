@@ -1,9 +1,9 @@
-<!-- edit item  -->
-<div class="edit-item">
+<!--  edit restaurant  -->
+<div class="edit-restaurant">
   <div class="container">
-    <div class="item">
+    <div class="restaurant">
       <div class="title">編輯餐廳</div>
-      <form action="/items/{{ restaurantItem._id }}/edit" method="post">
+      <form action="/restaurants/{{ restaurantItem._id }}/edit" method="post">
         <label>名稱</label>
         <br>
         <input type="text" placeholder="名稱" name="name" value="{{ restaurantItem.name }}">
@@ -41,10 +41,10 @@
         <textarea name="description" cols="30" rows="10" type="text">{{ restaurantItem.description }}</textarea>
         <div class="btn">
           <button type="submit">更新</button>
-          <button type="submit" formaction="/items/{{ restaurantItem._id }}" formmethod="get">取消</button>
+          <button type="submit" formaction="/restaurants/{{ restaurantItem._id }}" formmethod="get">取消</button>
         </div>
       </form>
     </div>
   </div>
 </div>
-<!--  edit item end  -->
+<!--  edit restaurant end  -->

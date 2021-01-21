@@ -1,18 +1,18 @@
 const express = require('express')
 const router = express.Router()
-const restaurant = require('./restaurant')
+const Restaurant = require('./restaurant')
 
 router.get('/:id/edit', (req, res) => {
   const id = req.params.id
-  return restaurant.findById(id)
+  return Restaurant.findById(id)
     .lean()
-    .then((restaurantItem) => res.render('edit', { restaurantItem }))
+    .then((restaurantItem) => res.render('../views/restaurant/edit', { restaurantItem }))
     .catch(error => console.log(error))
 })
 
 router.post('/:id/edit', (req, res) => {
   const id = req.params.id
-  return restaurant.findById(id)
+  return Restaurant.findById(id)
     .then(restaurantItem => {
       restaurantItem.name = req.body.name
       restaurantItem.name_en = req.body.name_en

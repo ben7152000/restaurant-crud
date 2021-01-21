@@ -427,7 +427,7 @@ ul, ol, li {
   margin: 0 auto;
 }
 
-.list .container .item-group {
+.list .container .restaurant-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,18 +438,18 @@ ul, ol, li {
           justify-content: center;
 }
 
-.list .container .item-group .item {
+.list .container .restaurant-group .restaurant {
   margin: 20px;
   max-width: 300px;
   width: 100%;
 }
 
-.list .container .item-group .item .pic {
+.list .container .restaurant-group .restaurant .pic {
   width: 100%;
   overflow: hidden;
 }
 
-.list .container .item-group .item .pic img {
+.list .container .restaurant-group .restaurant .pic img {
   width: 100%;
   height: 300px;
   vertical-align: middle;
@@ -461,18 +461,18 @@ ul, ol, li {
   transition: transform .5s, -webkit-transform .5s;
 }
 
-.list .container .item-group .item .pic img:hover {
+.list .container .restaurant-group .restaurant .pic img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.list .container .item-group .item .text {
+.list .container .restaurant-group .restaurant .text {
   padding: 10px 0 10px 10px;
   background-color: #ccc;
   position: relative;
 }
 
-.list .container .item-group .item .text .title {
+.list .container .restaurant-group .restaurant .text .title {
   font-size: 1.4rem;
   font-weight: 700;
   color: #333;
@@ -481,7 +481,7 @@ ul, ol, li {
   text-align: center;
 }
 
-.list .container .item-group .item .text .subtitle {
+.list .container .restaurant-group .restaurant .text .subtitle {
   font-size: 1rem;
   font-weight: 500;
   color: #333;
@@ -489,11 +489,11 @@ ul, ol, li {
   text-align: center;
 }
 
-.list .container .item-group .item .text .subtitle i {
+.list .container .restaurant-group .restaurant .text .subtitle i {
   margin-right: 5px;
 }
 
-.list .container .item-group .item .text .heart {
+.list .container .restaurant-group .restaurant .text .heart {
   border-radius: 20px;
   background-color: red;
   width: 70px;
@@ -506,43 +506,43 @@ ul, ol, li {
   margin: 10px auto 0;
 }
 
-.list .container .item-group .item .text .heart i {
+.list .container .restaurant-group .restaurant .text .heart i {
   margin-left: 5px;
 }
 
-.list .container .item-group .item .text .map {
+.list .container .restaurant-group .restaurant .text .map {
   position: absolute;
   right: 12%;
   bottom: 13%;
 }
 
-.list .container .item-group .item .text .map a {
+.list .container .restaurant-group .restaurant .text .map a {
   color: #333;
   -webkit-transition: color .5s;
   transition: color .5s;
 }
 
-.list .container .item-group .item .text .map a:hover {
+.list .container .restaurant-group .restaurant .text .map a:hover {
   color: #c5aa78;
 }
 
-.list .container .item-group .item .text form {
+.list .container .restaurant-group .restaurant .text form {
   position: absolute;
   right: 4%;
   bottom: 11%;
 }
 
-.list .container .item-group .item .text form button {
+.list .container .restaurant-group .restaurant .text form button {
   border: none;
   background-color: #ccc;
 }
 
-.list .container .item-group .item .text form button:focus {
+.list .container .restaurant-group .restaurant .text form button:focus {
   outline: none;
   border: none;
 }
 
-.list .container .item-group .item .text form button i {
+.list .container .restaurant-group .restaurant .text form button i {
   font-size: 1rem;
   color: #333;
   -webkit-transition: color .5s;
@@ -550,7 +550,7 @@ ul, ol, li {
   cursor: pointer;
 }
 
-.list .container .item-group .item .text form button i:hover {
+.list .container .restaurant-group .restaurant .text form button i:hover {
   color: #c5aa78;
 }
 
@@ -898,11 +898,11 @@ ul, ol, li {
   }
 }
 
-.edit-item {
+.edit-restaurant {
   padding-top: 150px;
 }
 
-.edit-item .container {
+.edit-restaurant .container {
   width: 100%;
   max-width: 1200px;
   display: -webkit-box;
@@ -917,7 +917,7 @@ ul, ol, li {
   margin: 0 auto;
 }
 
-.edit-item .container .item {
+.edit-restaurant .container .restaurant {
   width: 100%;
   max-width: 800px;
   margin: 15px;
@@ -939,7 +939,7 @@ ul, ol, li {
   padding: 15px;
 }
 
-.edit-item .container .item .title {
+.edit-restaurant .container .restaurant .title {
   font-size: 1.8rem;
   font-size: 700;
   color: #c5aa78;
@@ -948,20 +948,20 @@ ul, ol, li {
   border-bottom: 2px solid #c5aa78;
 }
 
-.edit-item .container .item form {
+.edit-restaurant .container .restaurant form {
   width: 100%;
   margin: auto;
   text-align: center;
 }
 
-.edit-item .container .item form label {
+.edit-restaurant .container .restaurant form label {
   font-size: 1.2rem;
   font-weight: 500;
   color: #333;
   margin-bottom: 10px;
 }
 
-.edit-item .container .item form input {
+.edit-restaurant .container .restaurant form input {
   width: 100%;
   height: 30px;
   margin-bottom: 25px;
@@ -975,12 +975,12 @@ ul, ol, li {
   background-color: #fff;
 }
 
-.edit-item .container .item form input:focus {
+.edit-restaurant .container .restaurant form input:focus {
   border: none;
   outline: none;
 }
 
-.edit-item .container .item form textarea {
+.edit-restaurant .container .restaurant form textarea {
   width: 100%;
   height: 300px;
   border-radius: 10px;
@@ -996,13 +996,13 @@ ul, ol, li {
   transition: background-color .5s;
 }
 
-.edit-item .container .item form textarea:focus {
+.edit-restaurant .container .restaurant form textarea:focus {
   background-color: #fff;
   border: none;
   outline: none;
 }
 
-.edit-item .container .item form .btn button {
+.edit-restaurant .container .restaurant form .btn button {
   width: 100px;
   height: 50px;
   border: none;
@@ -1022,32 +1022,32 @@ ul, ol, li {
   margin: 5px 10px 15px;
 }
 
-.edit-item .container .item form .btn button:hover {
+.edit-restaurant .container .restaurant form .btn button:hover {
   color: #c5aa78;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.edit-item .container .item form .btn button:active, .edit-item .container .item form .btn button:focus {
+.edit-restaurant .container .restaurant form .btn button:active, .edit-restaurant .container .restaurant form .btn button:focus {
   border: none;
   outline: none;
 }
 
 @media screen and (min-width: 768px) {
-  .edit-item .container .item .title {
+  .edit-restaurant .container .restaurant .title {
     font-size: 2.5rem;
   }
-  .edit-item .container .item form label {
+  .edit-restaurant .container .restaurant form label {
     font-size: 1.4rem;
   }
-  .edit-item .container .item form input {
+  .edit-restaurant .container .restaurant form input {
     font-size: 1rem;
     height: 40px;
   }
-  .edit-item .container .item form textarea {
+  .edit-restaurant .container .restaurant form textarea {
     font-size: 1rem;
   }
-  .edit-item .container .item form .btn button {
+  .edit-restaurant .container .restaurant form .btn button {
     font-size: 1.4rem;
     margin-top: 10px;
     margin-bottom: 20px;

@@ -1,4 +1,4 @@
-<!-- detail -->
+<!--  detail  -->
 <div class="detail">
   <h2 class="title">{{ restaurantItem.name }}</h2>
   <div class="container">
@@ -39,13 +39,13 @@
 
 <div class="icons">
   <div class="icon">
-    <a href="/items/{{ restaurantItem._id }}/edit"><i class="fas fa-edit"></i></a>
+    <a href="/restaurants/{{ restaurantItem._id }}/edit"><i class="fas fa-edit"></i></a>
   </div>
   <div class="icon">
     <a href="/">back</a>
   </div>
-  <form action="/items/{{ restaurantItem._id }}/deleteItem" method="post" class="icon">
+  <form action="/restaurants/{{ restaurantItem._id }}/deleteRestaurant" method="post" class="icon">
     <button><i class="fas fa-trash"></i></button>
   </form>
 </div>
-<!-- detail end -->
+<!--  detail end  -->
