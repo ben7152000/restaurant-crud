@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const Item = require('../../models/item')
+const restaurant = require('./restaurant')
 
 router.get('/', (req, res) => {
   const keyword = req.query.keyword
-  return Item.find({
+  return restaurant.find({
     $or: [
       { name: { $regex: `${keyword}`, $options: '$i' } },
       { category: { $regex: `${keyword}`, $options: '$i' } }

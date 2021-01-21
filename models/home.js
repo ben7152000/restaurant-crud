@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const Item = require('../../models/item')
+const Restaurant = require('./restaurant')
 
 router.get('/', (req, res) => {
-  Item.find()
+  Restaurant.find()
     .lean()
-    .then(item => res.render('index', { item }))
+    .then(restaurant => res.render('index', { restaurant }))
     .catch(error => console.error(error))
 })
 

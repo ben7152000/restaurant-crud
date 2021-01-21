@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const Item = require('../../models/item')
+const Restaurant = require('./restaurant')
 
-router.get('/newItem', (req, res) => res.render('newItem'))
+router.get('/addRestaurant', (req, res) => res.render('addRestaurant'))
 
 router.post('/', (req, res) => {
-  const restaurant = req.body
-  return Item.create(restaurant)
+  const restaurantItem = req.body
+  return Restaurant.create(restaurantItem)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })

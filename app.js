@@ -1,17 +1,14 @@
 // define modules
 const express = require('express')
-const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const router = require('./routes/index')
 const bodyParser = require('body-parser')
+
 const app = express()
 const post = 3000
 
-// connect database
-mongoose.connect('mongodb://localhost/restaurant-crud', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', () => console.log('The database is not working'))
-db.once('open', () => console.log('The database is working'))
+// setting database
+require('./config/mongoose')
 
 // setting body-parser
 app.use((bodyParser.urlencoded({ extended: true })))

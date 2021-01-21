@@ -1,6 +1,6 @@
 @import "color";
 
-.new-item {
+.add-restaurant {
   padding-top: 150px;
 
   .container {
@@ -11,7 +11,7 @@
     align-items: center;
     margin: 0 auto;
 
-    .item {
+    .restaurant {
       width: 100%;
       max-width: 800px;
       margin: 15px;
@@ -130,9 +130,10 @@
 }
 
 @media screen and (min-width: 768px) {
-  .new-item {
+  .add-restaurant {
     .container {
-      .item {
+      .restaurant
+       {
         .title {
           font-size: 2.5rem;
         }

@@ -1,9 +1,9 @@
 <!-- detail -->
 <div class="detail">
-  <h2 class="title">{{ item.name }}</h2>
+  <h2 class="title">{{ restaurantItem.name }}</h2>
   <div class="container">
     <div class="pic">
-      <img src="{{ item.image }}" alt="{{ item.name }}">
+      <img src="{{ restaurantItem.image }}" alt="{{ restaurantItem.name }}">
     </div>
     <div class="text">
       <p>
@@ -11,15 +11,15 @@
           <i class="fas fa-utensils"></i>
           類別：
         </span>
-        {{ item.category }}
+        {{ restaurantItem.category }}
       </p>
       <p>
         <span>
           <i class="fas fa-map-marker-alt"></i>
           地址：
         </span>
-        {{ item.location }}
-        <a href="{{ item.google_map }}" target="_blank">
+        {{ restaurantItem.location }}
+        <a href="{{ restaurantItem.google_map }}" target="_blank">
           <i class="fas fa-location-arrow map"></i>
         </a>
       </p>
@@ -28,10 +28,10 @@
           <i class="fas fa-mobile-alt"></i>
           電話：
         </span>
-        {{ item.phone }}
+        {{ restaurantItem.phone }}
       </p>
       <p class="description">
-        {{ item.description }}
+        {{ restaurantItem.description }}
       </p>
     </div>
   </div>
@@ -39,12 +39,12 @@
 
 <div class="icons">
   <div class="icon">
-    <a href="/items/{{ item._id }}/edit"><i class="fas fa-edit"></i></a>
+    <a href="/items/{{ restaurantItem._id }}/edit"><i class="fas fa-edit"></i></a>
   </div>
   <div class="icon">
     <a href="/">back</a>
   </div>
-  <form action="/items/{{ item._id }}/deleteItem" method="post" class="icon">
+  <form action="/items/{{ restaurantItem._id }}/deleteItem" method="post" class="icon">
     <button><i class="fas fa-trash"></i></button>
   </form>
 </div>

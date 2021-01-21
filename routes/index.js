@@ -1,18 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
-const home = require('../routes/modules/home')
-const newItem = require('../routes/modules/newItem')
-const detail = require('../routes/modules/detail')
-const edit = require('../routes/modules/edit')
-const deleteItem = require('../routes/modules/deleteItem')
-const search = require('../routes/modules/search')
+const home = require('../models/home')
+const addRestaurant = require('../models/addRestaurant')
+const detail = require('../models/detail')
+const edit = require('../models/edit')
+const deleteRestaurant = require('../models/deleteRestaurant')
+const search = require('../models/search')
 
 router.use('/', home)
-router.use('/items', newItem)
-router.use('/items', detail)
-router.use('/items', edit)
-router.use('/items', deleteItem)
+router.use('/restaurants', addRestaurant)
+router.use('/restaurants', detail)
+router.use('/restaurants', edit)
+router.use('/restaurants', deleteRestaurant)
 router.use('/search', search)
 
 module.exports = router

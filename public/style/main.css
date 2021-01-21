@@ -283,47 +283,129 @@ ul, ol, li {
   }
 }
 
-.create .container {
+.search {
+  margin: 0 20px;
+}
+
+.search .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 600px;
+  height: 120px;
+  margin: 50px auto;
+  background-color: #333;
+  border-radius: 20px;
+}
+
+.search .container h4 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #c5aa78;
+  letter-spacing: .5px;
+  padding: 15px 0 5px 32px;
+}
+
+.search .container .input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.create .container a {
+  padding-left: 30px;
+  padding-right: 30px;
   width: 100%;
-  max-width: 300px;
-  height: 50px;
-  border-radius: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #ccc;
-  background-color: #333;
-  -webkit-transition: color .5s;
-  transition: color .5s;
-  letter-spacing: 1px;
 }
 
-.create .container a:hover {
+.search .container .input input {
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  line-height: 1.6;
+  background-color: #ccc;
+  font-size: 1rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.search .container .input input:hover {
+  background-color: #fff;
+}
+
+.search .container .input input:focus {
+  border: none;
+  outline: none;
+}
+
+.search .container .input button {
+  font-size: 1.2rem;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #333;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ccc;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.search .container .input button:hover {
   color: #c5aa78;
+  background-color: #000;
 }
 
 @media screen and (min-width: 768px) {
-  .create .container a {
-    height: 70px;
-    font-size: 1.6rem;
-    line-height: 70px;
+  .search .container h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  .search .container .input input {
+    font-size: 1.1rem;
+    height: 40px;
+  }
+  .search .container .input button {
+    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+.create {
+  font-size: 1.2rem;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #333;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ccc;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.create:hover {
+  color: #c5aa78;
+  background-color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .create {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    line-height: 40px;
   }
 }
 
@@ -647,11 +729,11 @@ ul, ol, li {
   }
 }
 
-.new-item {
+.add-restaurant {
   padding-top: 150px;
 }
 
-.new-item .container {
+.add-restaurant .container {
   width: 100%;
   max-width: 1200px;
   display: -webkit-box;
@@ -666,7 +748,7 @@ ul, ol, li {
   margin: 0 auto;
 }
 
-.new-item .container .item {
+.add-restaurant .container .restaurant {
   width: 100%;
   max-width: 800px;
   margin: 15px;
@@ -688,7 +770,7 @@ ul, ol, li {
   padding: 15px;
 }
 
-.new-item .container .item .title {
+.add-restaurant .container .restaurant .title {
   font-size: 1.8rem;
   font-size: 700;
   color: #c5aa78;
@@ -697,20 +779,20 @@ ul, ol, li {
   border-bottom: 2px solid #c5aa78;
 }
 
-.new-item .container .item form {
+.add-restaurant .container .restaurant form {
   width: 100%;
   margin: auto;
   text-align: center;
 }
 
-.new-item .container .item form label {
+.add-restaurant .container .restaurant form label {
   font-size: 1.2rem;
   font-weight: 500;
   color: #333;
   margin-bottom: 10px;
 }
 
-.new-item .container .item form input {
+.add-restaurant .container .restaurant form input {
   width: 100%;
   height: 30px;
   margin-bottom: 25px;
@@ -726,17 +808,17 @@ ul, ol, li {
   transition: background-color .5s;
 }
 
-.new-item .container .item form input:hover {
+.add-restaurant .container .restaurant form input:hover {
   background-color: #fff;
 }
 
-.new-item .container .item form input:focus {
+.add-restaurant .container .restaurant form input:focus {
   background-color: #fff;
   border: none;
   outline: none;
 }
 
-.new-item .container .item form textarea {
+.add-restaurant .container .restaurant form textarea {
   width: 100%;
   height: 300px;
   border-radius: 10px;
@@ -752,17 +834,17 @@ ul, ol, li {
   transition: background-color .5s;
 }
 
-.new-item .container .item form textarea:hover {
+.add-restaurant .container .restaurant form textarea:hover {
   background-color: #fff;
 }
 
-.new-item .container .item form textarea:focus {
+.add-restaurant .container .restaurant form textarea:focus {
   background-color: #fff;
   border: none;
   outline: none;
 }
 
-.new-item .container .item form .btn button {
+.add-restaurant .container .restaurant form .btn button {
   width: 100px;
   height: 50px;
   border: none;
@@ -782,32 +864,32 @@ ul, ol, li {
   margin: 5px 10px 15px;
 }
 
-.new-item .container .item form .btn button:hover {
+.add-restaurant .container .restaurant form .btn button:hover {
   color: #c5aa78;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.new-item .container .item form .btn button:active, .new-item .container .item form .btn button:focus {
+.add-restaurant .container .restaurant form .btn button:active, .add-restaurant .container .restaurant form .btn button:focus {
   border: none;
   outline: none;
 }
 
 @media screen and (min-width: 768px) {
-  .new-item .container .item .title {
+  .add-restaurant .container .restaurant .title {
     font-size: 2.5rem;
   }
-  .new-item .container .item form label {
+  .add-restaurant .container .restaurant form label {
     font-size: 1.4rem;
   }
-  .new-item .container .item form input {
+  .add-restaurant .container .restaurant form input {
     font-size: 1rem;
     height: 40px;
   }
-  .new-item .container .item form textarea {
+  .add-restaurant .container .restaurant form textarea {
     font-size: 1rem;
   }
-  .new-item .container .item form .btn button {
+  .add-restaurant .container .restaurant form .btn button {
     font-size: 1.4rem;
     margin-top: 10px;
     margin-bottom: 20px;

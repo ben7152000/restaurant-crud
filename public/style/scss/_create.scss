@@ -1,45 +1,30 @@
 @import "color";
 
 .create {
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    margin: 0 auto;
+  font-size: 1.2rem;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: $dark-color;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: $light-color;
+  transition: .5s;
 
-    a{
-      width: 100%;
-      max-width: 300px;
-      height: 50px;
-      border-radius: 50px;
-      line-height: 50px;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: $light-color;
-      background-color: $dark-color;
-      transition: color .5s;
-      letter-spacing: 1px;
-
-      &:hover {
-        color: $primary-color;
-      }
-
-    }
+  &:hover {
+    color: $primary-color;
+    background-color: #000;
   }
 }
 
 @media screen and (min-width: 768px) {
   .create {
-    .container {
-      a {
-        height: 70px;
-        font-size: 1.6rem;
-        line-height: 70px;
-      }
-    }
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    line-height: 40px;
   }
 }
