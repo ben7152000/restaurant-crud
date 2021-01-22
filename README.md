@@ -8,6 +8,7 @@
 5. Body-Parser : v1.19.0
 6. Express-Handlebars : v5.2.0
 7. Mongoose : v5.11.12
+8. Express-validator: v6.9.2
 
 ## 安裝與執行步驟 (Installation and Execution)
 1. 將專案複製到本機 (兩種方法)
@@ -31,7 +32,8 @@
 >打開瀏覽器在網址列輸入 localhost:3000 即可瀏覽
 
 ## 功能描述 (Features)
-1. 點擊新增餐廳，建立自己的餐廳清單
+1. 點擊 +，建立自己的餐廳清單
+2. 點擊放大鏡，進行搜尋
 2. 點擊圖片可以進到餐廳詳細頁面
 3. 在詳細頁面中，點擊筆，可以進行編輯
 4. 點擊垃圾桶，可以將該筆刪除
