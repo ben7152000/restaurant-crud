@@ -803,17 +803,9 @@ ul, ol, li {
   border: none;
   border-radius: 30px;
   letter-spacing: .5px;
-  background-color: #bebebe;
-  -webkit-transition: background-color .5s;
-  transition: background-color .5s;
-}
-
-.add-restaurant .container .restaurant form input:hover {
-  background-color: #fff;
 }
 
 .add-restaurant .container .restaurant form input:focus {
-  background-color: #fff;
   border: none;
   outline: none;
 }
@@ -829,17 +821,9 @@ ul, ol, li {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: .5px;
-  background-color: #bebebe;
-  -webkit-transition: background-color .5s;
-  transition: background-color .5s;
-}
-
-.add-restaurant .container .restaurant form textarea:hover {
-  background-color: #fff;
 }
 
 .add-restaurant .container .restaurant form textarea:focus {
-  background-color: #fff;
   border: none;
   outline: none;
 }
@@ -1074,7 +1058,7 @@ ul, ol, li {
 .error .container .text {
   width: 100%;
   max-width: 800px;
-  margin: 15px;
+  margin: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1094,15 +1078,16 @@ ul, ol, li {
 }
 
 .error .container .text p {
-  font-size: 1.2rem;
+  font-size: .9rem;
   font-weight: 500;
   letter-spacing: 1px;
   color: #b61515;
+  line-height: 1.6;
 }
 
 @media screen and (min-width: 768px) {
   .error .container .text p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 

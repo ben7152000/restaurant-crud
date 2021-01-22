@@ -10,17 +10,27 @@ router.post('/', [
     .matches(/./)
     .withMessage('請輸入店家名稱'),
   check('phone')
-    .matches(/\d/)
+    .matches(/^\d{8,10}$/)
     .withMessage('請輸入電話號碼 8 ~ 10 碼'),
   check('rating')
-    .matches(/[0-5]/)
-    .withMessage('請給予 1.0 ~ 5.0 評價')
+    .matches(/^[1-5]{1}/)
+    .withMessage('請給予 1.0 ~ 5.0 評價'),
+  check('image')
+    .matches(/http.+/)
+    .withMessage("請給予 '圖片' 正確連結"),
+  check('google_map')
+    .matches(/http.+/)
+    .withMessage("請給予 '地圖' 正確連結"),
+  check('location')
+    .matches(/[\u4e00-\u9fa5]/)
+    .withMessage('請輸入地址')
 ], (req, res) => {
   const restaurantItem = req.body
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
-    return res.status(422).render('../views/restaurant/add', {
-      errorMessages: errors.array()
+    return res.render('../views/restaurant/add', {
+      errorMessages: errors.array(),
+      restaurantItem
     })
   }
   Restaurant.create(restaurantItem)
