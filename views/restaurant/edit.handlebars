@@ -1,5 +1,16 @@
 <!--  edit restaurant  -->
 <div class="edit-restaurant">
+
+  {{#each errorMessages}}
+    <div class="error">
+      <div class="container">
+        <div class="text">
+          <p>{{this.msg}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
   <div class="container">
     <div class="restaurant">
       <div class="title">編輯餐廳</div>
@@ -14,15 +25,15 @@
         <br>
         <label>種類</label>
         <br>
-        <input type="text" placeholder="種類" name="category" value="{{ restaurantItem.category }}">
+        <input type="text" placeholder="美式..." name="category" value="{{ restaurantItem.category }}">
         <br>
         <label>評價</label>
         <br>
-        <input type="text" placeholder="4.0" name="rating" value="{{ restaurantItem.rating }}">
+        <input type="text" placeholder="1.0 ~ 5.0" name="rating" value="{{ restaurantItem.rating }}">
         <br>
         <label>電話</label>
         <br>
-        <input type="text" placeholder="電話" name="phone" value="{{ restaurantItem.phone }}">
+        <input type="text" placeholder="0915......" name="phone" value="{{ restaurantItem.phone }}">
         <br>
         <label>圖片</label>
         <br>
@@ -30,7 +41,7 @@
         <br>
         <label>地址</label>
         <br>
-        <input type="text" placeholder="地址" name="location" value="{{ restaurantItem.location }}">
+        <input type="text" placeholder="台北市中山區......." name="location" value="{{ restaurantItem.location }}">
         <br>
         <label>Google 網址</label>
         <br>

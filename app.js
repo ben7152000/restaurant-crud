@@ -11,7 +11,7 @@ const post = 3000
 require('./config/mongoose')
 
 // setting body-parser
-app.use((bodyParser.urlencoded({ extended: true })))
+app.use((bodyParser.urlencoded({ extended: false })))
 
 // setting express-handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
