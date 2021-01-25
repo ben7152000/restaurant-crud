@@ -22,12 +22,30 @@
         <!--  create  -->
         <a href="./restaurants/addRestaurant" class="create"><i class="fas fa-plus"></i></a>
         <!--  create end  -->
-        
+
       </div>
     </form>
   </div>
 </div>
 <!--  search end  -->
+
+<!--  sort  -->
+<div class="sort">
+  <form action="/" method="post">
+    <select name="sort">
+      <option value="_id" selected>分類</option>
+      <option value="name">店名</option>
+      <option value="category">種類</option>
+      <option value="rating">評價</option>
+    </select>
+    <select name="order">
+      <option value="1" selected>正序</option>
+      <option value="-1">反序</option>
+    </select>
+    <button>送出</button>
+  </form>
+</div>
+<!--  sort end  -->
 
 <!--  restaurant list  -->
 <div class="list">
