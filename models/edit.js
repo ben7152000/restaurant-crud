@@ -44,15 +44,7 @@ router.post('/:id/edit', [
 
   return Restaurant.findById(id)
     .then(restaurantItem => {
-      restaurantItem.name = req.body.name
-      restaurantItem.name_en = req.body.name_en
-      restaurantItem.category = req.body.category
-      restaurantItem.image = req.body.image
-      restaurantItem.location = req.body.location
-      restaurantItem.phone = req.body.phone
-      restaurantItem.google_map = req.body.google_map
-      restaurantItem.rating = req.body.rating
-      restaurantItem.description = req.body.description
+      restaurantItem = Object.assign(restaurantItem, req.body)
       return restaurantItem.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
