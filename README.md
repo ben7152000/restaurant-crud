@@ -1,5 +1,5 @@
 # 餐廳清單 (Dining Room List)
-good
+
 ## 環境建置與需求 (Prerequisites)
 1. Node.js : v14.15.4
 2. Express : v4.17.1
