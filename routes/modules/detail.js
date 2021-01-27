@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Restaurant = require('./restaurant')
+const Restaurant = require('../../models/restaurant')
 
 router.get('/:id', (req, res) => {
   const id = req.params.id

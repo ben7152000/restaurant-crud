@@ -5,7 +5,7 @@ const router = require('./routes/index')
 const bodyParser = require('body-parser')
 
 const app = express()
-const post = 3000
+const PORT = process.env.PORT || 3000
 
 // setting database
 require('./config/mongoose')
@@ -22,4 +22,4 @@ app.use(express.static('public'))
 app.use(router)
 
 // listen server
-app.listen(post, () => console.log(`The server is working on the localhost:${post}`))
+app.listen(PORT, () => console.log(`The server is working on the localhost:${PORT}`))
