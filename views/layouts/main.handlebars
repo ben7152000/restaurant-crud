@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dining Room List</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining Room List</title>
 
-  <!--  Main CSS  -->
-  <link rel="stylesheet" href="../../style/main.css">
+    <!--  Main CSS  -->
+    <link rel="stylesheet" href="../../style/main.css">
 
-  <!--  Font Awesome  -->
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' />
+    <!--  Tailwind CSS  -->
+    <link rel="stylesheet" href="../style.css">
 
-</head>
+    <!--  Font Awesome  -->
+    <link rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' />
 
-<body>
+  </head>
 
-  <!--  header  -->
-  <input type="checkbox" id="menu-control">
+  <body>
 
-  <div class="header">
-    <a href="/" class="logo">D. R. List</a>
-    <label for="menu-control" class="menu-btn">
-      <span>menu</span>
-    </label>
-    <div class="nav">
-      <a href="/">清單首頁</a>
-      <a href="javascript:;">我的最愛</a>
-      <a href="javascript:;">顧客服務</a>
-      <a href="javascript:;">會員登入</a>
+    <!--  header  -->
+    <input type="checkbox" id="menu-control">
+
+    <div class="header">
+      <a href="/restaurants" class="logo">D. R. List</a>
+      <label for="menu-control" class="menu-btn">
+        <span>menu</span>
+      </label>
+      <span>
+        {{#if isAuthenticated}}
+          {{ user.name}}'s
+        {{/if}}
+      </span>
+      <div class="nav">
+        <a href="/restaurants">Home</a>
+        {{#if isAuthenticated}}
+          <a href="/users/logout">Logout</a>
+        {{else}}
+          <a href="/users/login">Login</a>
+        {{/if}}
+      </div>
     </div>
-  </div>
-  <!--  header end  -->
+    <!--  header end  -->
 
-  {{{ body }}}
+    {{{ body }}}
 
-  <!--  copyright  -->
-  <div class="copyright">
-    <span>copyright &copy; Ben Chou</span>
-  </div>
-  <!--  copyright end  -->
-
-</body>
+  </body>
 
 </html>

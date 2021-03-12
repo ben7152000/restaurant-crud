@@ -16,11 +16,13 @@
     <form action="/search">
       <h4>尋找餐廳：</h4>
       <div class="input">
-        <input type="text" name="keyword" placeholder="輸入餐廳、分類" value="{{ keyword }}">
+        <input type="text" name="keyword" placeholder="輸入餐廳、分類"
+          value="{{ keyword }}">
         <button type="submit"><i class="fas fa-search"></i></button>
 
         <!--  create  -->
-        <a href="./restaurants/addRestaurant" class="create"><i class="fas fa-plus"></i></a>
+        <a href="./restaurants/create" class="create"><i
+            class="fas fa-plus"></i></a>
         <!--  create end  -->
 
       </div>
@@ -53,31 +55,32 @@
     <div class="restaurant-group">
 
       {{#each restaurant}}
-      <div class="restaurant">
-        <div class="pic">
-          <a href="/restaurants/{{ this._id }}">
-            <img src="{{ this.image }}" alt="{{ this.name }}"></a>
+        <div class="restaurant">
+          <div class="pic">
+            <a href="/restaurants/{{ this._id }}">
+              <img src="{{ this.image }}" alt="{{ this.name }}"></a>
+          </div>
+          <div class="text">
+            <h6 class="title">{{ this.name }}</h6>
+            <div class="subtitle">
+              <i class="fas fa-utensils"></i>
+              {{ this.category }}
+            </div>
+            <div class="heart">
+              {{ this.rating }}
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="map">
+              <a href="{{ this.google_map }}" target="_blank">
+                <i class="fas fa-location-arrow map"></i>
+              </a>
+            </div>
+            <form action="/restaurants/{{ this._id }}/deleteRestaurant"
+              method="post">
+              <button type="submit"><i class="fas fa-trash"></i></button>
+            </form>
+          </div>
         </div>
-        <div class="text">
-          <h6 class="title">{{ this.name }}</h6>
-          <div class="subtitle">
-            <i class="fas fa-utensils"></i>
-            {{ this.category }}
-          </div>
-          <div class="heart">
-            {{ this.rating }}
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="map">
-            <a href="{{ this.google_map }}" target="_blank">
-              <i class="fas fa-location-arrow map"></i>
-            </a>
-          </div>
-          <form action="/restaurants/{{ this._id }}/deleteRestaurant" method="post">
-            <button type="submit"><i class="fas fa-trash"></i></button>
-          </form>
-        </div>
-      </div>
       {{/each}}
 
     </div>
