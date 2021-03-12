@@ -1,6 +1,6 @@
 <!--  banner  -->
 <div class="banner">
-  <div class="container">
+  <div class="container-banner">
     <div class="text">
       <h1 class="title">Hi! I'm Ben Chou</h1>
       <p>Welcome to Website</p>
@@ -13,7 +13,7 @@
 <!--  search  -->
 <div class="search">
   <div class="container">
-    <form action="/search">
+    <form action="/restaurants/search">
       <h4>尋找餐廳：</h4>
       <div class="input">
         <input type="text" name="keyword" placeholder="輸入餐廳、分類"
@@ -33,7 +33,7 @@
 
 <!--  sort  -->
 <div class="sort">
-  <form action="/" method="post">
+  <form action="/restaurants" method="post">
     <select name="sort">
       <option value="_id" selected>分類</option>
       <option value="name">店名</option>
@@ -75,8 +75,7 @@
                 <i class="fas fa-location-arrow map"></i>
               </a>
             </div>
-            <form action="/restaurants/{{ this._id }}/deleteRestaurant"
-              method="post">
+            <form action="/restaurants/{{ this._id }}/delete" method="post">
               <button type="submit"><i class="fas fa-trash"></i></button>
             </form>
           </div>

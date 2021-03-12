@@ -20,7 +20,7 @@
     opacity: 0.6;
   }
 
-  .container {
+  .container-banner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@
 
 @media screen and (min-width: 768px) {
   .banner {
-    .container {
+    .container-banner {
       .text {
         .title {
           font-size: 5rem;
