@@ -7,12 +7,16 @@
   text-align: center;
   line-height: 35px;
   color: $dark-color;
-  border-radius: 5px;
+  border-radius: 50%;
   border: none;
   outline: none;
   cursor: pointer;
   background-color: $light-color;
   transition: .5s;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 999;
 
   &:hover {
     color: $primary-color;
