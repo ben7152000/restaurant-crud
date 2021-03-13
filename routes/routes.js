@@ -5,6 +5,7 @@ const router = express.Router()
 // controller
 const userController = require('../controllers/userController')
 const restaurantController = require('../controllers/restaurantController')
+const facebookController = require('../controllers/facebookController')
 
 // middleware
 const { authenticator } = require('../middlewares/auth')
@@ -27,5 +28,9 @@ router.post('/users/login', userController.login)
 router.get('/users/register', userController.registerPage)
 router.post('/users/register', userController.register)
 router.get('/users/logout', userController.logout)
+
+// facebook
+router.get('/auth/facebook', facebookController.facebookAuthenticator)
+router.get('/auth/facebook/callback', facebookController.facebookCallback)
 
 module.exports = router
