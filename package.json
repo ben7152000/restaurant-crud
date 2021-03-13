@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "seed": "node models/seeds/restaurantSeeder.js && node models/seeds/userSeeder.js",
+    "seed": "node models/seeds/restaurantSeeder.js",
     "build-css": "tailwindcss build src/style.css -o public/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
