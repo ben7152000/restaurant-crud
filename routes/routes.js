@@ -8,29 +8,29 @@ const restaurantController = require('../controllers/restaurantController')
 const facebookController = require('../controllers/facebookController')
 
 // middleware
-const { authenticator } = require('../middlewares/auth')
+const { checkAuthenticator, checkNotAuthenticated } = require('../middlewares/auth')
 
 // home
 router.get('/', (req, res) => res.redirect('/users/login'))
 
 // restaurant
-router.get('/restaurants', authenticator, restaurantController.getRestaurants)
-router.get('/restaurants/create', authenticator, restaurantController.createRestaurantPage)
-router.post('/restaurants/create', authenticator, restaurantController.createRestaurant)
-router.get('/restaurants/:id/edit', authenticator, restaurantController.editRestaurantPage)
-router.post('/restaurants/:id/edit', authenticator, restaurantController.editRestaurant)
-router.post('/restaurants/:id/delete', authenticator, restaurantController.deleteRestaurant)
-router.get('/restaurants/:id', authenticator, restaurantController.detailRestaurant)
+router.get('/restaurants', checkAuthenticator, restaurantController.getRestaurants)
+router.get('/restaurants/create', checkAuthenticator, restaurantController.createRestaurantPage)
+router.post('/restaurants/create', checkAuthenticator, restaurantController.createRestaurant)
+router.get('/restaurants/:id/edit', checkAuthenticator, restaurantController.editRestaurantPage)
+router.post('/restaurants/:id/edit', checkAuthenticator, restaurantController.editRestaurant)
+router.post('/restaurants/:id/delete', checkAuthenticator, restaurantController.deleteRestaurant)
+router.get('/restaurants/:id', checkAuthenticator, restaurantController.detailRestaurant)
 
 // users
-router.get('/users/login', userController.loginPage)
-router.post('/users/login', userController.login)
-router.get('/users/register', userController.registerPage)
-router.post('/users/register', userController.register)
+router.get('/users/login', checkNotAuthenticated, userController.loginPage)
+router.post('/users/login', checkNotAuthenticated, userController.login)
+router.get('/users/register', checkNotAuthenticated, userController.registerPage)
+router.post('/users/register', checkNotAuthenticated, userController.register)
 router.get('/users/logout', userController.logout)
 
 // facebook
-router.get('/auth/facebook', facebookController.facebookAuthenticator)
-router.get('/auth/facebook/callback', facebookController.facebookCallback)
+router.get('/auth/facebook', checkNotAuthenticated, facebookController.facebookAuthenticator)
+router.get('/auth/facebook/callback', checkNotAuthenticated, facebookController.facebookCallback)
 
 module.exports = router
