@@ -1,6 +1,5 @@
 const { connect, connection } = require('mongoose')
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/restaurant-crud'
-connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = connection
 
 db.on('error', () => console.log('The database is not working'))

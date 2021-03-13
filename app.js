@@ -6,9 +6,12 @@ const session = require('express-session')
 const userPassport = require('./config/passport')
 const flash = require('connect-flash')
 const cors = require('cors')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
 
 // setting database
 require('./config/mongoose')
@@ -20,7 +23,7 @@ app.use((bodyParser.urlencoded({ extended: false })))
 app.use(cors())
 
 // express-session
-app.use(session({ secret: 'UserSecret', resave: false, saveUninitialized: true }))
+app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }))
 
 // setting express-handlebars
 app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
