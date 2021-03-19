@@ -28,6 +28,9 @@ const userController = {
     if (!name || !email || !password || !confirmPassword) {
       errors.push({ message: '所有欄位都是必填。' })
     }
+    if (!email.match(/.+@.+\..+/)) {
+      errors.push({ message: '請填入正確的信箱' })
+    }
     if (password !== confirmPassword) {
       errors.push({ message: '密碼與確認密碼不相符！' })
     }
