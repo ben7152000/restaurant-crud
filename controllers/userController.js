@@ -31,6 +31,9 @@ const userController = {
     if (!email.match(/.+@.+\..+/)) {
       errors.push({ message: '請填入正確的信箱' })
     }
+    if (!password.match(/.{8,}/)) {
+      errors.push({ message: '密碼需要8位' })
+    }
     if (password !== confirmPassword) {
       errors.push({ message: '密碼與確認密碼不相符！' })
     }
