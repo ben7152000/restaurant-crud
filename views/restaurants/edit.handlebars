@@ -3,55 +3,54 @@
   <div class="container">
     <div class="restaurant">
       <div class="title">編輯餐廳</div>
-      <form action="/restaurants/{{ restaurantItem._id }}/edit" method="post">
+      <form action="/restaurants/{{ restaurant._id }}/edit" method="post">
         <label>名稱</label>
         <br>
         <input type="text" placeholder="名稱" name="name"
-          value="{{ restaurantItem.name }}">
+          value="{{ restaurant.name }}">
         <br>
         <label>英文名稱</label>
         <br>
         <input type="text" placeholder="英文名稱" name="name_en"
-          value="{{ restaurantItem.name_en }}">
+          value="{{ restaurant.name_en }}">
         <br>
         <label>種類</label>
         <br>
         <input type="text" placeholder="美式..." name="category"
-          value="{{ restaurantItem.category }}">
+          value="{{ restaurant.category }}">
         <br>
         <label>評價</label>
         <br>
         <input type="number" placeholder="1.0 ~ 5.0" name="rating"
-          value="{{ restaurantItem.rating }}">
+          value="{{ restaurant.rating }}">
         <br>
         <label>電話</label>
         <br>
         <input type="text" placeholder="0915......" name="phone"
-          value="{{ restaurantItem.phone }}">
+          value="{{ restaurant.phone }}">
         <br>
         <label>圖片</label>
         <br>
         <input type="text" placeholder="http://..." name="image"
-          value="{{ restaurantItem.image }}">
+          value="{{ restaurant.image }}">
         <br>
         <label>地址</label>
         <br>
         <input type="text" placeholder="台北市中山區......." name="location"
-          value="{{ restaurantItem.location }}">
+          value="{{ restaurant.location }}">
         <br>
         <label>Google 網址</label>
         <br>
         <input type="text" placeholder="Google 網址" name="google_map"
-          value="{{ restaurantItem.google_map }}">
+          value="{{ restaurant.google_map }}">
         <br>
         <label>描述</label>
         <br>
         <textarea name="description" cols="30" rows="10"
-          type="text">{{ restaurantItem.description }}</textarea>
+          type="text">{{ restaurant.description }}</textarea>
         <div class="btn">
           <button type="submit">更新</button>
-          <button type="submit"
-            formaction="/restaurants/{{ restaurantItem._id }}"
+          <button type="submit" formaction="/restaurants/{{ restaurant._id }}"
             formmethod="get">取消</button>
         </div>
       </form>

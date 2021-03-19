@@ -3,54 +3,103 @@ const Restaurant = require('../models/restaurant')
 
 // restaurant control
 const restaurantController = {
-  getRestaurants: (req, res) => {
-    return Restaurant.find()
-      .lean()
-      .then(restaurant => res.render('../views/restaurants/index', { restaurant }))
-      .catch(error => {
-        console.error(error)
-        res.render('../views/error/index')
-      })
+
+  // 取得所有餐廳
+  getRestaurants: async (req, res) => {
+    const userId = req.user._id
+    try {
+      const restaurant = await Restaurant.find({ userId }).lean()
+      res.render('../views/restaurants/index', { restaurant })
+    } catch (e) {
+      console.log(e)
+      res.render('../views/error/index')
+    }
   },
+
+  // 建立餐廳頁面
   createRestaurantPage: (req, res) => {
     res.render('../views/restaurants/create')
   },
+
+  // 建立餐廳資料
   createRestaurant: async (req, res) => {
-    const restaurantItem = req.body
-    await Restaurant.create(restaurantItem)
-      .then(() => res.redirect('/restaurants'))
-      .catch(error => console.log(error))
+    const userId = req.user._id
+    // eslint-disable-next-line camelcase
+    const { name, name_en, phone, rating, google_map, category, image, location, description } = req.body
+    try {
+      await Restaurant.create({ name, name_en, phone, rating, google_map, category, image, location, description, userId })
+      res.redirect('/restaurants')
+    } catch (e) {
+      console.log(e)
+      res.render('../views/error/index')
+    }
   },
+
+  // 編輯餐廳頁面
   editRestaurantPage: async (req, res) => {
-    const id = req.params.id
-    await Restaurant.findById(id)
-      .lean()
-      .then(restaurantItem => res.render('../views/restaurants/edit', { restaurantItem }))
-      .catch(error => console.log(error))
+    const userId = req.user._id
+    const _id = req.params.id
+    try {
+      const restaurant = await Restaurant.findOne({ userId, _id }).lean()
+      res.render('../views/restaurants/edit', { restaurant })
+    } catch (e) {
+      console.log(e)
+      res.render('../views/error/index')
+    }
   },
+
+  // 編輯餐廳資料
   editRestaurant: async (req, res) => {
-    const id = req.params.id
-    await Restaurant.findById(id)
-      .then(restaurantItem => {
-        restaurantItem = Object.assign(restaurantItem, req.body)
-        return restaurantItem.save()
-      })
-      .then(() => res.redirect(`/restaurants/${id}`))
-      .catch(error => console.log(error))
+    const userId = req.user._id
+    const _id = req.params.id
+    try {
+      const restaurant = await Restaurant.findOne({ userId, _id })
+      // eslint-disable-next-line camelcase
+      const { name, name_en, phone, rating, google_map, category, image, location, description } = req.body
+      restaurant.name = name
+      // eslint-disable-next-line camelcase
+      restaurant.name_en = name_en
+      restaurant.phone = phone
+      restaurant.rating = rating
+      // eslint-disable-next-line camelcase
+      restaurant.google_map = google_map
+      restaurant.category = category
+      restaurant.image = image
+      restaurant.location = location
+      restaurant.description = description
+      restaurant.save()
+      res.redirect(`/restaurants/${_id}`)
+    } catch (e) {
+      console.log(e)
+      res.render('../views/error/index')
+    }
   },
+
+  // 刪除餐廳
   deleteRestaurant: async (req, res) => {
-    const id = req.params.id
-    await Restaurant.findOne(id)
-      .then(item => item.remove())
-      .then(() => res.redirect('/restaurants'))
-      .catch(error => console.log(error))
+    const userId = req.user._id
+    const _id = req.params.id
+    try {
+      const restaurant = await Restaurant.findOne({ userId, _id })
+      restaurant.remove()
+      res.redirect('/restaurants')
+    } catch (e) {
+      console.log(e)
+      res.render('../views/error/index')
+    }
   },
+
+  // 詳細餐廳頁面
   detailRestaurant: async (req, res) => {
-    const id = req.params.id
-    await Restaurant.findById(id)
-      .lean()
-      .then((restaurantItem) => res.render('../views/restaurants/detail', { restaurantItem }))
-      .catch(error => console.log(error))
+    const userId = req.user._id
+    const _id = req.params.id
+    try {
+      const restaurant = await Restaurant.findOne({ userId, _id }).lean()
+      res.render('../views/restaurants/detail', { restaurant })
+    } catch (e) {
+      console.log(e)
+      res.render('../views/error/index')
+    }
   }
 }
 
