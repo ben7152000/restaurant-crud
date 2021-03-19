@@ -20,21 +20,17 @@ const USERS_SEEDER = [
 
 db.once('open', () => {
   console.log('The database is continue')
-  USERS_SEEDER.forEach((user, index) => {
-    bcrypt
-      .genSalt(10)
-      .then(salt => bcrypt.hash(user.password, salt))
-      .then(hash => User.create({
-        email: user.email,
-        password: hash
-      }))
-      .then(userData => {
-        const userId = userData._id
-        return Promise.all(Array.from({ length: 3 }, (_, i) => Restaurant.create({
-          ...restaurant[(i + (index * 3))], userId
-        })))
-      })
-      .then(() => db.close())
+  USERS_SEEDER.forEach(async (user, index) => {
+    try {
+      const salt = await bcrypt.genSalt(10)
+      const hashPassword = await bcrypt.hash(user.password, salt)
+      const userSeeder = await User.create({ email: user.email, password: hashPassword })
+      Array.from({ length: 3 }, (v, i) => Restaurant.create({ ...restaurant[(i + (index * 3))], userId: userSeeder._id }))
+      const restaurantSeeder = await Restaurant.find()
+      if (restaurantSeeder.length === 3) process.exit()
+    } catch (e) {
+      console.log(e)
+    }
   })
   console.log('Restaurant and Users seeders is done')
 })
