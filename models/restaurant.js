@@ -12,12 +12,7 @@ const restaurantSchema = new Schema({
   image: { type: String, required: true },
   location: { type: String, required: true },
   description: { type: String, required: true },
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    index: true,
-    required: true
-  }
+  userId: { type: Schema.Types.ObjectId, ref: 'User', index: true, required: true }
 })
 
 const Restaurant = model('Restaurant', restaurantSchema)

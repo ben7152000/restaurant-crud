@@ -18,9 +18,9 @@ const USERS_SEEDER = [
   }
 ]
 
-db.once('open', async () => {
+db.once('open', () => {
   console.log('The database is continue')
-  await USERS_SEEDER.forEach((user, index) => {
+  USERS_SEEDER.forEach((user, index) => {
     bcrypt
       .genSalt(10)
       .then(salt => bcrypt.hash(user.password, salt))

@@ -1,11 +1,16 @@
+// restaurant schema
 const Restaurant = require('../models/restaurant')
 
+// restaurant control
 const restaurantController = {
-  getRestaurants: async (req, res) => {
-    await Restaurant.find()
+  getRestaurants: (req, res) => {
+    return Restaurant.find()
       .lean()
       .then(restaurant => res.render('../views/restaurants/index', { restaurant }))
-      .catch(err => console.error(err))
+      .catch(error => {
+        console.error(error)
+        res.render('../views/error/index')
+      })
   },
   createRestaurantPage: (req, res) => {
     res.render('../views/restaurants/create')
@@ -35,7 +40,7 @@ const restaurantController = {
   },
   deleteRestaurant: async (req, res) => {
     const id = req.params.id
-    await Restaurant.findById(id)
+    await Restaurant.findOne(id)
       .then(item => item.remove())
       .then(() => res.redirect('/restaurants'))
       .catch(error => console.log(error))
