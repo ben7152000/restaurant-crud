@@ -36,5 +36,5 @@ db.once('open', () => {
       })
       .then(() => db.close())
   })
-  console.log('Restaurant seeders is done')
+  console.log('Restaurant and Users seeders is done')
 })

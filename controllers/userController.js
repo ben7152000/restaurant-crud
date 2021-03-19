@@ -51,14 +51,13 @@ const userController = {
           email
         })
       }
-      bcrypt
-        .genSalt(10)
-        .then(salt => bcrypt.hash(password, salt))
-        .then(hash => User.create({
-          name,
-          email,
-          password: hash
-        }))
+      const salt = await bcrypt.genSalt(10)
+      const hashPassword = await bcrypt.hash(password, salt)
+      User.create({
+        name,
+        email,
+        password: hashPassword
+      })
       res.redirect('login')
     } catch (e) {
       console.log(e)
